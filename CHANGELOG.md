@@ -1,10 +1,11 @@
-## 0.1.0 - First Release
+## 0.1.0 - Prepare First Release
 * Every feature added
 * Every bug fixed
-## TODO
+## 0.1.1 - Prepare First Release
+* Add enabler
 * Add all language
 * Rewrite config
-* Add enabler
 * Add notification
+## TODO
 * Add descrption to README.md
 * Publish to Atom
