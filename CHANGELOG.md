@@ -2,7 +2,7 @@
 * Every feature added
 * Every bug fixed
 ## 0.1.1 - Prepare First Release
-* Add enabler
+* Add and fix enabler
 * Add all language
 * Rewrite config
 * Add notification
