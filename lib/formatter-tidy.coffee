@@ -62,9 +62,10 @@ module.exports = FormatterTidy =
             args.push 'yes'
             args.push '--tidy-mark'
             args.push 'no'
-            console.log command, args
             toReturn = []
+            toReturnErr = []
             process = child_process.spawn(command, args, {})
+            process.stderr.on 'data', (data) -> toReturnErr.push data
             process.stdout.on 'data', (data) -> toReturn.push data
             process.stdin.write text
             process.stdin.end()
@@ -72,7 +73,7 @@ module.exports = FormatterTidy =
               if toReturn.length isnt 0
                 resolve(toReturn.join('\n'))
               else
-                atom.notifications.addWarning("An error is occured");
+                atom.notifications.addWarning(toReturnErr.join('\n'));
       } if atom.config.get 'formatter-tidy.html.enable'
       {
         selector: '.text.xml, source.plist'
@@ -95,8 +96,10 @@ module.exports = FormatterTidy =
             args.push '--tidy-mark'
             args.push 'no'
             toReturn = []
-            console.log command, args
+            toReturn = []
+            toReturnErr = []
             process = child_process.spawn(command, args, {})
+            process.stderr.on 'data', (data) -> toReturnErr.push data
             process.stdout.on 'data', (data) -> toReturn.push data
             process.stdin.write text
             process.stdin.end()
@@ -104,6 +107,6 @@ module.exports = FormatterTidy =
               if toReturn.length isnt 0
                 resolve(toReturn.join('\n'))
               else
-                atom.notifications.addWarning("An error is occured");
+                atom.notifications.addError('formatter-tidy : error', {dismissable: true, detail: toReturnErr.join('\n')});
       } if atom.config.get 'formatter-tidy.xml.enable'
     ]
