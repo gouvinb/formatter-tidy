@@ -24,7 +24,7 @@ module.exports = FormatterTidy =
           title: 'Arguments passed to the formatter HTML'
           type: 'array'
           default: []
-          description: 'Example : `[[PRINT EXAMPLE]]`.'
+          description: 'Example : `--wrap, 160`.'
     xml:
       title: 'XML'
       type: 'object'
@@ -39,7 +39,7 @@ module.exports = FormatterTidy =
           title: 'Arguments passed to the formatter XML'
           type: 'array'
           default: []
-          description: 'Example : `[[PRINT EXAMPLE]]`.'
+          description: 'Example : `--wrap, 80, --indent-attributes, yes`.'
 
   provideFormatter: ->
     [
