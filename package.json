@@ -2,8 +2,13 @@
   "name": "formatter-tidy",
   "main": "./lib/formatter-tidy",
   "version": "1.0.0",
-  "description": "A short description of your package",
-  "keywords": [],
+  "description": "Formatter for HTML, XML.",
+  "keywords": [
+    "format",
+    "formatter",
+    "html",
+    "xml"
+  ],
   "repository": "https://github.com/gouvinb/formatter-tidy",
   "license": "MIT",
   "engines": {
