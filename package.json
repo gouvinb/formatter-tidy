@@ -1,7 +1,7 @@
 {
   "name": "formatter-tidy",
   "main": "./lib/formatter-tidy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Formatter for HTML, XML.",
   "keywords": [
     "format",
